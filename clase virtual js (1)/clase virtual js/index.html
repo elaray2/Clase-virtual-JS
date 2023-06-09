@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Uso Javascript</title>
+        <!-- <script defer src="./js/variables.js"></script> -->
+    </head>
+    <body>
+        <h1>Sintaxis de JS</h1>
+        <button id="add" >Anadir Usuario</button>
+        <button id="del">Eliminar Usuario</button>
+        <!-- <script src="./js/variables.js"></script> -->
+        <!-- <script src="./js/ciclos.js"></script> -->
+        <!-- <script src="./js/arreglos.js"></script> -->
+        <!-- <script src="./js/objetos.js"></script> -->
+        <!-- <script src="./js/metodosNumericos.js"></script> -->
+        <!-- <script src="./js/funciones.js"></script> -->
+        <!-- <script src="./js/recorridos.js"></script> -->
+        <!-- <script src="./js/json.js"></script>  -->
+        <!-- <script src="./js/apis.js"></script>  -->
+        <!-- <script src="./js/fechas.js"></script>  -->
+        <script src="./js/localStorage.js">
+let nombre
+document.getElementById('add').addEventListener('click', () => {
+    
+    if (localStorage.getItem('usuario')){
+        nombre = prompt('Escribe otro nombre');    
+    }else{
+        nombre = prompt('Escribe tu nombre por primer vez');
+
+    }
+	window.localStorage.setItem('usuario', nombre);
+});
+
+document.getElementById('del').addEventListener('click', () => {
+	localStorage.removeItem('usuario');
+});
+
+if (localStorage.usuario) {
+	console.log('Hola ', localStorage.getItem('usuario'));
+} else {
+	console.log('Hola usuario anonimo');
+}
+
+
+
+        </script> 
+        <!-- <script src="./js/bom.js"></script>  -->
+    </body>
+</html>
